@@ -4,112 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACconvoyageauto</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            background-color: #121212;
-            color: #fff;
-            font-family: Arial, sans-serif;
+        /* Basic reset styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .header {
-            text-align: center;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            background-color: #1e1e1e;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #0072ff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #005bb5;
         }
         .hero {
-            background-image: url('background.jpg');
-            height: 400px;
-            background-size: cover;
+            height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             text-align: center;
+            background: url('hero-bg.jpg') no-repeat center center/cover;
         }
         .hero h1 {
-            font-size: 48px;
-            text-shadow: 2px 2px #000;
+            font-size: 3em;
+            margin-bottom: 10px;
         }
-        .services {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-        }
-        .service-card {
-            border: 2px solid red;
-            padding: 20px;
-            width: 30%;
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: scale(1.05);
-        }
-        .reviews {
-            padding: 20px;
-            background-color: #1e1e1e;
-        }
-        .contact-form {
+        .services, .testimonials, .pricing, .contact {
+            padding: 60px 20px;
             text-align: center;
+        }
+        .service {
             margin: 20px;
+            display: inline-block;
+            width: calc(33% - 40px);
+            vertical-align: top;
         }
-        .button {
-            background-color: red;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: darkred;
-        }
-        @media (max-width: 768px) {
-            .services {
-                flex-direction: column;
-            }
-            .service-card {
-                width: 90%;
-                margin: 10px auto;
-            }
+        .testimonial {
+            margin: 20px;
+            display: inline-block;
+            width: calc(50% - 40px);
+        }  
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Bienvenue sur ACconvoyageauto</h1>
-    </div>
-    <div class="hero">
-        <h1>Votre service de transport de confiance</h1>
-    </div>
-    <div class="services">
-        <div class="service-card">
-            <h2>Service 1</h2>
-            <p>Description du Service 1.</p>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#pricing">Tarification</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="hero">
+        <h1>Bienvenue chez ACconvoyageauto</h1>
+        <p>Votre partenaire de confiance pour tous vos besoins de transport.</p>
+    </section>
+    <section class="services" id="services">
+        <h2>Nos Services</h2>
+        <div class="service">
+            <h3>Transport de voiture</h3>
+            <p>Transport sécurisé et rapide de votre véhicule.</p>
         </div>
-        <div class="service-card">
-            <h2>Service 2</h2>
-            <p>Description du Service 2.</p>
+        <div class="service">
+            <h3>Livraison express</h3>
+            <p>Livraisons rapides et fiables à votre porte.</p>
         </div>
-        <div class="service-card">
-            <h2>Service 3</h2>
-            <p>Description du Service 3.</p>
+        <div class="service">
+            <h3>Déplacement longue distance</h3>
+            <p>Conduite de votre véhicule sur de longues distances.</p>
         </div>
-    </div>
-    <div class="reviews">
-        <h2>Avis Clients</h2>
-        <p>"C'est un service incroyable!" - Client A</p>
-        <p>"Très satisfait de leur réactivité." - Client B</p>
-    </div>
-    <div class="contact-form">
+    </section>
+    <section class="testimonials" id="testimonials">
+        <h2>Témoignages</h2>
+        <div class="testimonial">
+            <p>Excellente expérience! Je recommande!</p>
+            <p>&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+        </div>
+        <div class="testimonial">
+            <p>Rapide et professionnel. Très satisfait!</p>
+            <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <h2>Tarification</h2>
+        <p>Nos offres pour tous les budgets.</p>
+        <ul>
+            <li>Transport de voiture: 150€</li>
+            <li>Livraison express: 50€</li>
+            <li>Déplacement longue distance: À partir de 200€</li>
+        </ul>
+    </section>
+    <section class="contact" id="contact">
         <h2>Contactez-nous</h2>
         <form>
             <input type="text" placeholder="Votre nom" required>
             <input type="email" placeholder="Votre email" required>
             <textarea placeholder="Votre message" required></textarea>
-            <button type="submit" class="button">Envoyer</button>
+            <button type="submit">Envoyer</button>
         </form>
-        <p>Téléphone: <a href="tel:0622746102">0622746102</a></p>
-        <p>Email: <a href="mailto:aymeric.cottais35@gmail.com">aymeric.cottais35@gmail.com</a></p>
-    </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 ACconvoyageauto | Suivez-nous sur 
+            <a href="#">Facebook</a>, 
+            <a href="#">Twitter</a>, 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
 </body>
 </html>
