@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convoyage Auto - Aymeric Cottais</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; scroll-behavior:smooth; }
+body { background:#fff; color:#111; line-height:1.6; }
+a { text-decoration:none; color:inherit; }
+
+/* BANDEAU */
+.banner {
+  background:#28a745;
+  color:#fff;
+  text-align:center;
+  padding:12px 0;
+  font-weight:bold;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1001;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* MENU STICKY */
+nav {
+  position:fixed;
+  top:40px;
+  width:100%;
+  background:#111;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  padding:10px 0;
+}
+nav a {
+  color:#fff;
+  margin:0 15px;
+  font-weight:bold;
+  padding:8px 12px;
+  transition:0.3s;
+}
+nav a:hover { background:#007bff; border-radius:5px; }
+
+/* HEADER HERO */
+header {
+  text-align:center;
+  padding:180px 20px 100px 20px;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1605902711622-cfb43c443e7b?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+  color:#fff;
+}
+header h1 { font-size:3rem; margin-bottom:10px; text-transform:uppercase; opacity:0; animation:fadeIn 1s forwards; }
+header h2 { font-size:1.3rem; margin-bottom:20px; font-weight:400; opacity:0; animation:fadeIn 1.5s forwards; }
+header p { font-size:1.1rem; margin-bottom:25px; opacity:0; animation:fadeIn 2s forwards; }
+header button {
+  padding:18px 40px;
+  font-size:1rem;
+  background:#007bff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+  opacity:0;
+  animation:fadeIn 2.5s forwards;
+}
+header button:hover { background:#0056b3; transform:scale(1.05); }
+
+/* SECTIONS */
+section { padding:80px 20px; max-width:1000px; margin:0 auto; scroll-margin-top:120px; }
+section h2 { font-size:2.2rem; margin-bottom:25px; text-align:center; color:#111; position:relative; }
+section h2::after { content:''; display:block; width:60px; height:3px; background:#28a745; margin:10px auto 0 auto; border-radius:2px; }
+
+/* LISTES */
+.services ul, .about ul, .process ul { list-style:none; padding:0; margin-top:20px; display:grid; grid-gap:15px; }
+.services li, .about li, .process li {
+  background:#f9f9f9;
+  padding:15px 20px;
+  border-radius:8px;
+  font-size:1.1rem;
+  position:relative;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 0.8s forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.services li:hover, .about li:hover, .process li:hover { transform:translateY(-3px); box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+.services li::before, .about li::before, .process li::before {
+  content:"\1F697";
+  position:absolute;
+  left:10px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* IMAGES SECTIONS */
+.section-image {
+  width:100%;
+  max-height:400px;
+  object-fit:cover;
+  border-radius:8px;
+  margin:20px 0;
+}
+
+/* CONTACT */
+.contact p { margin:12px 0; font-size:1.1rem; }
+.contact a { color:#007bff; font-weight:bold; }
+.contact a:hover { text-decoration:underline; }
+
+/* MENTIONS */
+.mentions { font-size:0.85rem; color:#555; border-top:1px solid #ddd; padding-top:30px; margin-top:40px; }
+
+/* FOOTER */
+footer { text-align:center; padding:25px; color:#555; border-top:1px solid #ddd; }
+
+/* ANIMATIONS */
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+@keyframes fadeUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  header h1{font-size:2.2rem;}
+  header h2{font-size:1rem;}
+  header p{font-size:0.95rem;}
+  nav { flex-direction:column; }
+  nav a { margin:5px 0; }
+  .services ul, .about ul, .process ul{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="banner">
+Disponible 7j/7 – Intervention rapide partout en France | 📞 06 22 74 61 02
+</div>
+
+<nav>
+  <a href="#about">À propos</a>
+  <a href="#services">Services</a>
+  <a href="#process">Fonctionnement</a>
+  <a href="#pricing">Tarifs</a>
+  <a href="#mentions">Mentions légales</a>
+</nav>
+
+<header>
+  <h1>AYMERIC COTTAIS</h1>
+  <h2>Convoyage Automobile Professionnel – Basé à Rennes & France entière</h2>
+  <p>Plus de 10 ans d’expérience dans le transport sécurisé</p>
+  <button onclick="window.location.href='mailto:aymeric.cottais35@gmail.com'">Demander un devis</button>
+</header>
+
+<section id="about" class="about">
+  <h2>À propos</h2>
+  <img class="section-image" src="https://images.unsplash.com/photo-1571607388072-3c5c7c915d34?auto=format&fit=crop&w=1950&q=80" alt="Conduite véhicule">
+  <p>Je suis auto-entrepreneur spécialisé dans le convoyage automobile. Je prends directement le volant de votre véhicule pour l’acheminer en toute sécurité vers sa destination, partout en France.</p>
+  <p>Fort de plus de 10 ans d’expérience dans le transport, je vous garantis :</p>
+  <ul class="about">
+    <li>Ponctualité</li>
+    <li>Conduite professionnelle et respectueuse</li>
+    <li>Communication claire</li>
+    <li>Fiabilité et sérieux</li>
+  </ul>
+</section>
+
+<section id="services" class="services">
+  <h2>Mes services</h2>
+  <img class="section-image" src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1950&q=80" alt="Véhicules en route">
+  <ul>
+    <li>Véhicules particuliers</li>
+    <li>Véhicules utilitaires</li>
+    <li>Véhicules neufs ou d’occasion</li>
+    <li>Concessions, marchands VO, entreprises et particuliers</li>
+  </ul>
+  <p>Interventions à Rennes et dans toute la France.</p>
+</section>
+
+<section id="process" class="process">
+  <h2>Fonctionnement</h2>
+  <img class="section-image" src="https://images.unsplash.com/photo-1518443905767-89c7aa0f4e1b?auto=format&fit=crop&w=1950&q=80" alt="Processus convoyage">
+  <ul>
+    <li>Contact par téléphone ou email</li>
+    <li>Validation des détails (lieux, date, véhicule)</li>
+    <li>Prise en charge du véhicule</li>
+    <li>Livraison et confirmation</li>
+  </ul>
+</section>
+
+<section id="pricing" class="pricing">
+  <h2>Tarifs</h2>
+  <p>💶 Tarifs sur devis uniquement. Chaque mission dépend de la distance, du type de véhicule et du délai demandé.</p>
+  <p>📞 06 22 74 61 02 | 📧 <a href="mailto:aymeric.cottais35@gmail.com">aymeric.cottais35@gmail.com</a></p>
+</section>
+
+<section id="mentions" class="mentions">
+  <h2>Mentions légales</h2>
+  <p><strong>Éditeur :</strong> Aymeric Cottais – Micro-entrepreneur (auto-entreprise) – Convoyage automobile</p>
+  <p>Siège social : 9 rue des Entons, 35580 Saint-Senoux, France</p>
+  <p>SIRET : 932 005 812 00015</p>
+  <p>Email : aymeric.cottais35@gmail.com | Téléphone : 06 22 74 61 02</p>
+  <p><strong>Hébergement :</strong> [Nom et coordonnées de l’hébergeur]</p>
+  <p><strong>Assurance :</strong> Assurance responsabilité civile professionnelle adaptée à l’activité de convoyage automobile (détails sur demande)</p>
+  <p><strong>Données personnelles :</strong> Collectées uniquement pour répondre aux demandes de devis. Conformément au RGPD, vous pouvez demander l’accès, la modification ou la suppression de vos données.</p>
+</section>
+
+<footer>
+&copy; 2026 Aymeric Cottais – Convoyage automobile – Rennes & France entière
+</footer>
+
+</body>
+</html>
